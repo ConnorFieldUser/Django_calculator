@@ -10,8 +10,9 @@ def index_view(request):
     if request.POST:
         num_1 = request.POST["num_1"]
         num_2 = request.POST["num_2"]
-        if type(num_1) == 'int' and type(num_2) == 'int':
-            Calc.objects.create(num_1=num_1, num_2=num_2)
+        if request.POST != "":
+            if type(num_1) == 'int' and type(num_2) == 'int':
+                Calc.objects.create(num_1=num_1, num_2=num_2)
     context = {
     }
     return render(request, 'index.html', context)
