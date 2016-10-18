@@ -7,32 +7,34 @@
   </head>
   <body style="background-color:black">
     <div class="container">
-    print
 
-    <form class="" action="" method="post">
-  {% csrf_token %}
-  <textarea name="num_1" rows="2" calss="form-control"></textarea>
-</form>
+            <h1 style="color: darkred; text-align: center">Calc-you-later</h1>
 
+<br><br><br>
 
-    <select>
-      <option value="+">plus</option>
-      <option value="-">minus</option>
-      <option value="*">times</option>
-      <option value="/">divided by</option>
-    </select>
-
-    <form class="" action="" method="post">
-  {% csrf_token %}
-  <textarea name="num_2" rows="2" calss="form-control"></textarea>
-  <p>
-      <button class="btn btn-default" type="submit">Button</button>
-  </p>
-</form>
-
-
-    number2
-  </div>
+      <form class="" action="" method="post">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-md-4">
+          <textarea name="num_1" rows="2" class="form-control"></textarea>
+        </div>
+        <div class="col-md-2">
+          <select name="operator">
+            <option value="+">plus</option>
+            <option value="-">minus</option>
+            <option value="*">times</option>
+            <option value="/">divided by</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <textarea name="num_2" rows="2" class="form-control"></textarea>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-default" type="submit">Do the maths</button>
+        </div>
+      </form>
+    </div>
+</div>
 
   </body>
 </html>
