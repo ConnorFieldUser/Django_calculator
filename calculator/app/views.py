@@ -6,7 +6,30 @@ from django.shortcuts import render
 def index_view(request):
     print(request.POST)
     context = {
+        "number1": '',
+        "number2": '',
+        "operator": ''
     }
+    if request.POST:
+        number1 = int(request.POST['num_1'])
+        number2 = int(request.POST['num_2'])
+        operator = request.POST['operator']
+        print()
+
+        if operator == '+':
+            new = number1 + number2
+        elif operator == '-':
+            new = number1 - number2
+        elif operator == '*':
+            new = number1 * number2
+        elif operator == '/':
+            new = number1 / number2
+        context['newnum'] = new
+        print(new)
+        context['1'] = number1
+        context['op'] = operator
+        context['2'] = number2
+
     return render(request, 'index.html', context)
 
 # >>> d = {
